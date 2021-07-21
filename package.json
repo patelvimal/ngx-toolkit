@@ -1,14 +1,16 @@
 {
   "name": "my-toolkit",
   "version": "0.0.0",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "electron": "ng build --base-href ./ && electron . --trace-warnings",
+    "package": "electron-packager . --out=my-toolkit --ignore=/src --ignore=/node_modules --overwrite"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~12.1.1",
     "@angular/common": "~12.1.1",
@@ -28,6 +30,8 @@
     "@angular/compiler-cli": "~12.1.1",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "electron": "^13.1.7",
+    "electron-packager": "^15.3.0",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
